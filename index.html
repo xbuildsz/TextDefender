@@ -1,71 +1,133 @@
 <!DOCTYPE html>
-         <html lang="en">
-         <head>
-             <meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             <title>Login - Secure Text Editor</title>
-             <style>
-                 body {
-                     font-family: Arial, sans-serif;
-                     background: linear-gradient(45deg, #f3ec78, #af4261);
-                     color: #333;
-                     display: flex;
-                     flex-direction: column;
-                     align-items: center;
-                     justify-content: center;
-                     height: 100vh;
-                     margin: 0;
-                 }
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             
+              <title>Text Defender</title>
+              <style>
+                  body {
+                      font-family: 'Roboto', sans-serif;
+                      background: linear-gradient(175deg, #003541 50%, #ceb4ad 40%, #006471 10%);
+
+                      color: #000000;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      height: 100vh;
+                      margin: 0;
+                  }
+                  p {
+                    font-size: 0.90em;
+                      margin-: 20px;
+                      color: #ffffff;
+                      text-align: left;
+                      flex-direction: left;
+                      display: flex;
+
+                  }
                  h1 {
-                     font-size: 2em;
-                     margin-bottom: 20px;
-                 }
-                 .input-container {
-                     margin-bottom: 20px;
-                 }
-                 .input-container input {
-                     padding: 10px;
-                     font-size: 1em;
-                     border: 2px solid #333;
-                     border-radius: 5px;
-                     margin-right: 10px;
-                 }
-                 .button {
-                     padding: 10px 20px;
-                     font-size: 1em;
-                     background-color: #333;
-                     color: #fff;
-                     border: none;
-                     border-radius: 5px;
-                     cursor: pointer;
-                 }
-                 .button:hover {
-                     background-color: #555;
-                 }
-             </style>
-         </head>
-         <body>
-             <h1>Secure Text Editor Login</h1>
-             <div class="input-container">
-                 <input type="text" id="filename" placeholder="Enter filename">
-                 <input type="password" id="password" placeholder="Enter password">
-             </div>
-             <button class="button" onclick="continueToEditor()">Continue</button>
-             <script>
-                 function continueToEditor() {
-                     const filename = document.getElementById('filename').value;
-                     const password = document.getElementById('password').value;
-         
-                     if (filename === '' || password === '') {
-                         alert('Please fill in both filename and password.');
-                         return;
-                     }
-         
-                     const storageKey = btoa(`${filename}_${password}`);
-                     localStorage.setItem('currentStorageKey', storageKey);
-                     window.location.href = 'editor.html';
-                 }
-             </script>
-         </body>
-         </html>
-         
+                      font-size: 2.5em;
+                      margin-bottom: 20px;
+                      color: #000000;
+                      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                  }
+                  h4 {
+                      font-size: 1.80em;
+                      margin-bottom: 20px;
+                      color: #03051d;
+                      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                  }
+                  .input-container {
+                      margin-bottom: 20px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                  }
+                  .input-container input {
+                      padding: 10px;
+                      font-size: 1em;
+                      border: none;
+                      border-radius: 5px;
+                      margin-bottom: 10px;
+                      width: 300px;
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                  }
+                  .button {
+                      padding: 10px 20px;
+                      font-size: 1em;
+                      background-color: #333;
+                      color: #ffffff;
+                      border: none;
+                      border-radius: 5px;
+                      cursor: pointer;
+                      transition: background-color 0.3s;
+                  }
+                  .button:hover {
+                      background-color: #3A2A40;
+                  }
+                  .card {
+                      background: #F6E4E7;
+                      padding: 20px;
+                      border-radius: 10px;
+                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                      text-align: center;
+                  }
+              </style>
+          </head>
+          <body>
+            <p> > Your data is secure with us.<br>
+                > The safest site on the web for storing your text!<br>
+                > Rest assured, developers cannot see or access your stored data.<br>
+                > Your privacy and security are our top priorities. <br>
+                > Encrypt all your notes, access anywhere.<br>
+            </p>
+            
+              <div class="card">
+                  <h1>Text defender by xbuildsz</h1>
+                  <h2>Login here</h2>
+                  <div class="input-container">
+                      <input type="text" id="filename" placeholder="Enter filename">
+                      <input type="password" id="password" placeholder="Enter password">
+                  </div>
+                  <button class="button" onclick="continueToEditor()">Continue</button>
+              </div>
+              <h4> Why is it safe?<br></h4>
+              <ul> 
+                <p>
+                 
+                               <li>  Your password isn't sent to our server - we can't decrypt your text even if we wanted to.<br> Only encrypted text is sent over the Internet.</li>
+                               <li> No cookies, no sessions, no registration, no users tracking. <br>We can't identify you at all. We can't know when the same user visits two different sites.</li>
+                               <li>No logging in or out, just close the browser tab and you're safe.<br></li>
+                               <li>No ads - we hate ads because they can track you, and they're distracting.<br></li>
+                               <li>You don't have to trust anyone or agree on anything - check the code yourself.<br> All our code is well written and full of comments so that you can understand it in details - start by looking at main.js, and check communication with our servers.<br></li>
+                               <li>If someone wants your text, he'll need your password, but he'll have to find your site first.<br>
+                                   Overwrite protection<br></li>
+                               <li>You can use the same sub-site from multiple browsers/devices at the same time.<br></li>
+                                  <br></p></ul></li>
+               </p>
+              </ul>
+              <p>Your privacy is our priority. Your data is not shared with or accessible by developers. 
+                 Enjoy using Text Defender for all your text management needs!</p>
+              
+          </div>
+              <script>
+                  function continueToEditor() {
+                      const filename = document.getElementById('filename').value;
+                      const password = document.getElementById('password').value;
+          
+                      if (filename === '' || password === '') {
+                          alert('Please fill in both filename and password.');
+                          return;
+                      }
+          
+                      const storageKey = btoa(`${filename}_${password}`);
+                      localStorage.setItem('currentStorageKey', storageKey);
+                      window.location.href = 'editor.html';
+                  }
+            
+                 </script>
+          </body>
+          </html>
+          
