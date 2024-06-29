@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Secure Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #editor {
+            width: 80%;
+            height: 300px;
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Text Editor</h1>
+    <textarea id="editor" placeholder="Type your text here..."></textarea>
+    <button class="button" onclick="saveContent()">Save Content</button>
+    <script>
+        function getStorageKey() {
+            return localStorage.getItem('currentStorageKey');
+        }
+
+        function saveContent() {
+            const content = document.getElementById('editor').value;
+            const storageKey = getStorageKey();
+
+            if (storageKey === null) {
+                alert('No storage key found. Please login again.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            localStorage.setItem(storageKey, content);
+            alert('Content saved successfully!');
+        }
+
+        function loadContent() {
+            const storageKey = getStorageKey();
+
+            if (storageKey === null) {
+                alert('No storage key found. Please login again.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const content = localStorage.getItem(storageKey);
+            if (content !== null) {
+                document.getElementById('editor').value = content;
+            }
+        }
+
+        window.onload = loadContent;
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Secure Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #editor {
+            width: 80%;
+            height: 300px;
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Text Editor</h1>
+    <textarea id="editor" placeholder="Type your text here..."></textarea>
+    <button class="button" onclick="saveContent()">Save Content</button>
+    <script>
+        function getStorageKey() {
+            return localStorage.getItem('currentStorageKey');
+        }
+
+        function saveContent() {
+            const content = document.getElementById('editor').value;
+            const storageKey = getStorageKey();
+
+            if (storageKey === null) {
+                alert('No storage key found. Please login again.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            localStorage.setItem(storageKey, content);
+            alert('Content saved successfully!');
+            window.location.href = 'index.html';
+        }
+
+        function loadContent() {
+            const storageKey = getStorageKey();
+
+            if (storageKey === null) {
+                alert('No storage key found. Please login again.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const content = localStorage.getItem(storageKey);
+            if (content !== null) {
+                document.getElementById('editor').value = content;
+            }
+        }
+
+        window.onload = loadContent;
+    </script>
+</body>
+</html>
+

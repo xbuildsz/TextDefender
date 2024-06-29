@@ -1,0 +1,295 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #editor {
+            width: 80%;
+            height: 300px;
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #333;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Text Editor</h1>
+    <div class="input-container">
+        <input type="text" id="filename" placeholder="Enter filename">
+        <input type="password" id="password" placeholder="Enter password">
+    </div>
+    <textarea id="editor" placeholder="Type your text here..."></textarea>
+    <button class="button" onclick="saveContent()">Save Content</button>
+    <script>
+        function saveContent() {
+            const filename = document.getElementById('filename').value;
+            const password = document.getElementById('password').value;
+            const content = document.getElementById('editor').value;
+
+            if (filename === '' || password === '' || content === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${filename}_${password}.txt`;
+            a.click();
+
+            URL.revokeObjectURL(url);
+            alert('Content saved successfully!');
+        }
+    </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #editor {
+            width: 80%;
+            height: 300px;
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #333;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secure Text Editor</h1>
+    <div class="input-container">
+        <input type="text" id="filename" placeholder="Enter filename">
+        <input type="password" id="password" placeholder="Enter password">
+    </div>
+    <textarea  -->
+
+        <!-- <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Login - Secure Text Editor</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background: linear-gradient(45deg, #f3ec78, #af4261);
+                    color: #333;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+                h1 {
+                    font-size: 2em;
+                    margin-bottom: 20px;
+                }
+                .input-container {
+                    margin-bottom: 20px;
+                }
+                .input-container input {
+                    padding: 10px;
+                    font-size: 1em;
+                    border: 2px solid #333;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                }
+                .button {
+                    padding: 10px 20px;
+                    font-size: 1em;
+                    background-color: #333;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .button:hover {
+                    background-color: #555;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Secure Text Editor Login</h1>
+            <div class="input-container">
+                <input type="text" id="filename" placeholder="Enter filename">
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button class="button" onclick="continueToEditor()">Continue</button>
+            <script>
+                function continueToEditor() {
+                    const filename = document.getElementById('filename').value;
+                    const password = document.getElementById('password').value;
+        
+                    if (filename === '' || password === '') {
+                        alert('Please fill in both filename and password.');
+                        return;
+                    }
+        
+                    const storageKey = btoa(`${filename}_${password}`);
+                    localStorage.setItem('currentStorageKey', storageKey);
+                    window.location.href = 'editor.html';
+                }
+            </script>
+        </body>
+        </html>
+         -->
+         <!DOCTYPE html>
+         <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Login - Secure Text Editor</title>
+             <style>
+                 body {
+                     font-family: Arial, sans-serif;
+                     background: linear-gradient(45deg, #f3ec78, #af4261);
+                     color: #333;
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+                     justify-content: center;
+                     height: 100vh;
+                     margin: 0;
+                 }
+                 h1 {
+                     font-size: 2em;
+                     margin-bottom: 20px;
+                 }
+                 .input-container {
+                     margin-bottom: 20px;
+                 }
+                 .input-container input {
+                     padding: 10px;
+                     font-size: 1em;
+                     border: 2px solid #333;
+                     border-radius: 5px;
+                     margin-right: 10px;
+                 }
+                 .button {
+                     padding: 10px 20px;
+                     font-size: 1em;
+                     background-color: #333;
+                     color: #fff;
+                     border: none;
+                     border-radius: 5px;
+                     cursor: pointer;
+                 }
+                 .button:hover {
+                     background-color: #555;
+                 }
+             </style>
+         </head>
+         <body>
+             <h1>Secure Text Editor Login</h1>
+             <div class="input-container">
+                 <input type="text" id="filename" placeholder="Enter filename">
+                 <input type="password" id="password" placeholder="Enter password">
+             </div>
+             <button class="button" onclick="continueToEditor()">Continue</button>
+             <script>
+                 function continueToEditor() {
+                     const filename = document.getElementById('filename').value;
+                     const password = document.getElementById('password').value;
+         
+                     if (filename === '' || password === '') {
+                         alert('Please fill in both filename and password.');
+                         return;
+                     }
+         
+                     const storageKey = btoa(`${filename}_${password}`);
+                     localStorage.setItem('currentStorageKey', storageKey);
+                     window.location.href = 'editor.html';
+                 }
+             </script>
+         </body>
+         </html>
+         
