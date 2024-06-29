@@ -1,57 +1,14 @@
-<body>
-    <h1>Secure Text Editor</h1>
-    <textarea id="editor" placeholder="Type your text here..."></textarea>
-    <button class="button" onclick="saveContent()">Save Content</button>
-    <script>
-        function getStorageKey() {
-            return localStorage.getItem('currentStorageKey');
-        }
-
-        function saveContent() {
-            const content = document.getElementById('editor').value;
-            const storageKey = getStorageKey();
-
-            if (storageKey === null) {
-                alert('No storage key found. Please login again.');
-                window.location.href = 'index.html';
-                return;
-            }
-
-            localStorage.setItem(storageKey, content);
-            alert('Content saved successfully!');
-        }
-
-        function loadContent() {
-            const storageKey = getStorageKey();
-
-            if (storageKey === null) {
-                alert('No storage key found. Please login again.');
-                window.location.href = 'index.html';
-                return;
-            }
-
-            const content = localStorage.getItem(storageKey);
-            if (content !== null) {
-                document.getElementById('editor').value = content;
-            }
-        }
-
-        window.onload = loadContent;
-    </script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor - Secure Text Editor</title>
+    <title>Text Defender</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, #f3ec78, #af4261);
-            color: #333;
+            background: linear-gradient(45deg, #003541, #006471);
+            color: #fdfdfd;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -83,14 +40,15 @@
             cursor: pointer;
         }
         .button:hover {
-            background-color: #555;
+            background-color: #0d2909;
         }
     </style>
 </head>
 <body>
-    <h1>Secure Text Editor</h1>
+    <h1>Text Defender</h1>
     <textarea id="editor" placeholder="Type your text here..."></textarea>
-    <button class="button" onclick="saveContent()">Save Content</button>
+    <button class="button" onclick="saveContent()">Save Content</button><br>
+    <button class="button" onclick="deleteFile()">Delete File</button>
     <script>
         function getStorageKey() {
             return localStorage.getItem('currentStorageKey');
@@ -110,8 +68,20 @@
             alert('Content saved successfully!');
             window.location.href = 'index.html';
         }
+        function deleteFile() {
+            const storageKey = getStorageKey();
 
-        function loadContent() {
+            if (storageKey === null) {
+                alert('No storage key found. Please login again.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            localStorage.removeItem(storageKey);
+            alert('File deleted successfully!');
+            window.location.href = 'index.html';
+        }
+         function loadContent() {
             const storageKey = getStorageKey();
 
             if (storageKey === null) {
